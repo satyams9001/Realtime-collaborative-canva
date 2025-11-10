@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const socket = io();
+  // const socket = io();
+  const socket = io(
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : window.location.origin
+);
+
   const canvasEl = document.getElementById('canvas');
   const app = new CanvasApp(canvasEl, { getSocket: ()=>socket, sendStroke: (s)=>socket.emit('stroke-data', s) });
   const colorEl = document.getElementById('color');
