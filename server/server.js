@@ -9,7 +9,12 @@ const io = new Server(server, { cors: { origin: "*" } });
 
 const rooms = new Rooms();
 
-app.use(express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '../client'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/index.html'));
+});
+
 
 io.on('connection', socket => {
   socket.on('join', ({ roomId, userName }) => {
