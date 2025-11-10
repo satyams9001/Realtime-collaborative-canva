@@ -38,3 +38,5 @@ Estimated: 9-10 hours to build this prototype, document architecture, and test b
 - Implement server rate-limits & batching and client smoothing spline (Catmull-Rom or Bezier).
 - Add mobile touch support (pointer events already help) and rooms listing endpoint.
 
+#DEPLOYED LINK
+https://realtime-collaborative-canva.onrender.com/
